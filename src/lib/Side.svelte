@@ -1,442 +1,7 @@
-
 <iframe id="iframeright" frameborder="0" height="0" width="0"></iframe>
 <iframe id="iframeleft" frameborder="0" height="0" width="0"></iframe>
 
-<div class="hamburger hamburger--squeeze" type="button" id="hamburger" on:click={sidemenu2}><span class="hamburger-box" on:click={sidemenu}>
-  <span class="hamburger-inner" alt="settings" on:click={sidemenu2}></span></span></div>
-  <div id="main"><div class="row"><div class="col s6"><div class="logo">
-  </div></div><div class="col s6"></div></div></div>
 <script>
-
-
-  import jQuery from 'jquery';
-
-import { tick } from 'svelte';
-
-  let settingssaucy = false;
-
-
-  function saucylanguages() {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.gtranslate.net/widgets/latest/dwf.js';
-    script.async = true;
-    script.onload = () => {
-      // The script has been successfully loaded
-      console.log('External script has been loaded');
-    };
-
-    document.head.appendChild(script);
-
-    window.gtranslateSettings = {"default_language":"en","wrapper_selector":".gtranslate_wrapper","switcher_horizontal_position":"inline","switcher_text_color":"#f7f7f7","switcher_arrow_color":"#f2f2f2","switcher_border_color":"#161616","switcher_background_color":"#303030","switcher_background_shadow_color":"#474747","switcher_background_hover_color":"#3a3a3a","dropdown_text_color":"#eaeaea","dropdown_hover_color":"#748393","dropdown_background_color":"#474747"}
-  }
-  function sidemenu2() {
-    settingssaucy = true;
-    document.querySelector("#navigation").style.display = "inline";
-  document.querySelector(".nav-header").style.display = "inline";
-  document.querySelector(".nav-level").style.display = "inline";
-  document.querySelector(".side2").style.display = "inline";
-  document.querySelector(".side").style.display = "inline";
- 
-  
-  }
-
-  $: if (settingssaucy) {
-    tick().then(() => {
-      
-      function closesaucysidemenu() {
-      document.querySelector("#navigation").style.display = "none";
-    }
-         jQuery("#hamburger").click(function() {
-            jQuery("#iframe1").length || jQuery("#stars").html('<embed id="iframe1" style="opacity: 0;" onload="this.style.opacity = 1;" src="https://p61q9.csb.app/" width="100%" frameborder="0" frameborder="none"></embed>')
-        });
-    
-      jQuery(function() {
-        jQuery("#hide").click(function() {
-            jQuery("section").css("top", "0px")
-        })
-    }), jQuery(function() {
-        jQuery("#show").click(function() {
-            jQuery("section").css("top", "50px")
-        })
-    }),
-    function() {
-        var s, t, n, e, a, i;
-    
-        function o(n) {
-            for (var e = (this.el = n).className.replace(/^\s+|\s+jQuery/g, "").split(/\s+/), t = 0; t < e.length; t++) s.call(this, e[t])
-        }
-        void 0 === window.Element || "classList" in document.documentElement || (i = Array.prototype, s = i.push, t = i.splice, n = i.join, o.prototype = {
-            add: function(n) {
-                this.contains(n) || (s.call(this, n), this.el.className = this.toString())
-            },
-            contains: function(n) {
-                return -1 != this.el.className.indexOf(n)
-            },
-            item: function(n) {
-                return this[n] || null
-            },
-            remove: function(n) {
-                if (this.contains(n)) {
-                    for (var e = 0; e < this.length && this[e] != n; e++);
-                    t.call(this, e, 1), this.el.className = this.toString()
-                }
-            },
-            toString: function() {
-                return n.call(this, " ")
-            },
-            toggle: function(n) {
-                return this.contains(n) ? this.remove(n) : this.add(n), this.contains(n)
-            }
-        }, window.DOMTokenList = o, e = Element.prototype, a = "classList", i = function() {
-            return new o(this)
-        }, Object.defineProperty ? Object.defineProperty(e, a, {
-            get: i
-        }) : e.__defineGetter__(a, i))
-    }();
-    var ddfullscreenmenu = function() {
-    var e, t, s, a, i = 100;
-    
-    function o(n, e, t) {
-        n.classList.remove("hidemenu"), n.classList.remove("showmenu"), e.classList.remove("hidemenu"), e.classList.remove("showmenu"), "forward" == t && e.classList.add("hidemenu"), n.classList.add("showmenu"), n.style.zIndex = i++
-    }
-    return {
-        togglemenu: function(n) {
-            void 0 === n ? e.classList.toggle("openmenu") : e.classList["open" == n ? "add" : "remove"]("openmenu")
-        },
-        init: function() {
-            e = document.getElementById("ddfullscreenmenu"), t = document.getElementById("ulwrapper"), s = document.getElementById("fullscreenmenu-ul"), document.getElementById("closex").addEventListener("click", function(n) {
-                ddfullscreenmenu.togglemenu("close"), n.preventDefault()
-            }, !1);
-            var n = function(n, e, t) {
-                for (var e = e || function() {}, t = t || function() {}, s = document.createDocumentFragment(), a = n.getElementsByTagName("ul"), i = a.length - 1; 0 <= i; i--) {
-                    var o = a[i],
-                        l = a[i].parentNode;
-                    s.appendChild(a[i]), e(i, l, o)
-                }
-                return s.appendChild(n), t(n), s
-            }(s, function(n, e, t) {
-                e.className = "header", (e._submenuref = t).className = "submenu2";
-                var s = document.createElement("li");
-                s.className = "breadcrumb", s.innerHTML = e.getElementsByTagName("a")[0].firstChild.nodeValue, s._headerref = e, t.insertBefore(s, t.getElementsByTagName("li")[0]), e.addEventListener("click", function(n) {
-                    var e = this.parentNode;
-                    o(this._submenuref, e, "forward"), n.stopPropagation(), n.preventDefault()
-                }, !1), s.addEventListener("click", function(n) {
-                    o(this._headerref.parentNode, this._headerref._submenuref, "backwards"), n.stopPropagation(), n.preventDefault()
-                }, !1)
-            }, function(n) {
-                n.style.zIndex = i++
-            });
-            t.appendChild(n), t.addEventListener("click", function() {
-                clearTimeout(a), a = setTimeout(function() {
-                    ddfullscreenmenu.togglemenu("close")
-                }, 100)
-            }, !1)
-        }
-    }
-    }();
-    
-    function changepic(n) {
-    document.getElementById(n).src = "/uploads/branding/saucy.png"
-    }
-    ddfullscreenmenu.init(), jQuery(function() {
-    var n;
-    
-    function e(n, e, t, s) {
-        this.el = n, this.main = e, this.trigger = t, this.options = function(n, e) {
-            for (var t in e) e.hasOwnProperty(t) && (n[t] = e[t]);
-            return n
-        }(this.defaults, s), this._init()
-    }
-    n = "#navigation", jQuery(".hamburger").on("click", function() {
-        jQuery(n).toggleClass("open"), jQuery(n).hasClass("open") ? (jQuery(n).css("transform", "translateX(0)"), jQuery("#main").css("transform", "translateX(-300px)")) : (jQuery(n).css("transform", "translateX(300px)"), jQuery("#main").css("transform", "translateX(0)"), jQuery("#navigation").width(), jQuery(".nav-overlay").removeClass("nav-overlay"), jQuery(".submenu").removeClass("open")), jQuery("#main").toggleClass("nav-open")
-    }), jQuery("#navigation"), jQuery("#main"), jQuery("nav").width(), e.prototype = {
-        defaults: {
-            backClass: ".back",
-            navLevel: ".nav-level"
-        },
-        _init: function() {
-            this.level = 1, this.menuOpen = !1, this.navTranslate = 40, this.navPosition = 0, this.navWidth = jQuery(this.el).width(), this._openMenu(), this._toggleLevels(), this._toggleLevels2(), this._toggleLevels3(), this._toggleLevels4(), this._toggleLevels5(), this._toggleLevels6(), this._toggleLevels7(), this._toggleLevels8(), this._toggleLevels9(), this._toggleLevels10(), this._toggleLevels11(), this._toggleLevels12(), this._toggleLevels13(), this._toggleLevels14(), this._toggleLevels15(), this._toggleLevels16(), this._toggleLevels17(), this._toggleLevels18(), this._toggleLevels19(), this._toggleLevels20(), this._toggleLevels21(), this._toggleLevels22(), this._toggleLevels23(), this._toggleLevels24(), this._toggleLevels25(), this._toggleLevels26(), this._toggleLevels27(), this._toggleLevels28(), this._toggleLevels29(), this._toggleLevels30(), this._toggleBack(), this._setLevels(this.defaults.navLevel)
-        },
-        _toggleLevels: function() {
-            var e = this;
-            jQuery("#saucysidemenu").on("click", function() {
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels2: function() {
-            var e = this;
-            jQuery("#saucysidemenu2").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels3: function() {
-            var e = this;
-            jQuery("#saucysidemenu3").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels4: function() {
-            var e = this;
-            jQuery("#saucysidemenu4").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels5: function() {
-            var e = this;
-            jQuery("#saucysidemenu5").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels6: function() {
-            var e = this;
-            jQuery("#saucysidemenu6").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels7: function() {
-            var e = this;
-            jQuery("#saucysidemenu7").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels8: function() {
-            var e = this;
-            jQuery("#saucysidemenu8").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels9: function() {
-            var e = this;
-            jQuery("#saucysidemenu9").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels10: function() {
-            var e = this;
-            jQuery("#saucysidemenu10").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels11: function() {
-            var e = this;
-            jQuery("#saucysidemenu11").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels12: function() {
-            var e = this;
-            jQuery("#saucysidemenu12").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels13: function() {
-            var e = this;
-            jQuery("#saucysidemenu13").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels14: function() {
-            var e = this;
-            jQuery("#saucysidemenu14").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels15: function() {
-            var e = this;
-            jQuery("#saucysidemenu15").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels16: function() {
-            var e = this;
-            jQuery("#saucysidemenu16").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels17: function() {
-            var e = this;
-            jQuery("#saucysidemenu17").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels18: function() {
-            var e = this;
-            jQuery("#saucysidemenu18").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels19: function() {
-            var e = this;
-            jQuery("#saucysidemenu19").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels20: function() {
-            var e = this;
-            jQuery("#saucysidemenu20").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels21: function() {
-            var e = this;
-            jQuery("#saucysidemenu21").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels22: function() {
-            var e = this;
-            jQuery("#saucysidemenu22").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels23: function() {
-            var e = this;
-            jQuery("#saucysidemenu23").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels24: function() {
-            var e = this;
-            jQuery("#saucysidemenu24").on("click", function() {
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels25: function() {
-            var e = this;
-            jQuery("#saucysidemenu25").on("click", function() {
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels26: function() {
-            var e = this;
-            jQuery("#saucysidemenu26").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels27: function() {
-            var e = this;
-            jQuery("#saucysidemenu27").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels28: function() {
-            var e = this;
-            jQuery("#saucysidemenu28").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels29: function() {
-            var e = this;
-            jQuery("#saucysidemenu29").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleLevels30: function() {
-            var e = this;
-            jQuery("#saucysidemenu30").on("click", function() {
-              
-                let n = jQuery(this).closest("div.nav-level");
-                jQuery(this).next().hasClass("submenu") && (jQuery(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-            })
-        },
-        _toggleBack: function() {
-            let t = this,
-                n = jQuery(t.defaults.backClass);
-            n.on("click", function() {
-                let n = jQuery(this).closest(t.defaults.navLevel),
-                    e = jQuery(this).closest(".nav-overlay.nav-covered");
-                e.toggleClass("nav-overlay nav-covered"), t.navWidth = t.navWidth - t.navTranslate, t.navPosition = t.navPosition - t.navTranslate, t._transform(t.navWidth, t.main), t._transform(t.navPosition, t.el), n.hasClass("open") && n.toggleClass("open")
-            })
-        },
-        _transform: function(n, e) {
-            jQuery(e).css("transform", "translate3d(-" + n + "px,0,0)")
-        },
-        _openMenu: function() {
-            var n = this;
-            jQuery(n.trigger).on("click", function() {
-                jQuery(n.trigger).toggleClass("is-active"), jQuery(n.trigger).hasClass("is-active") ? (n.menuOpen = !0, n._resetMenu()) : (n.menuOpen = !1, n.level = 0)
-            })
-        },
-        _resetMenu: function() {
-            this.navWidth = jQuery(this.el).width(), this.navPosition = 0, jQuery(".nav-overlay").removeClass("nav-overlay"), jQuery(".submenu").removeClass("open")
-        },
-        _setLevels: function(n) {
-            jQuery(n).each(function(n) {
-                jQuery(this).attr("data-level", n + 1)
-            })
-        }
-    }, new e("nav", "#main", ".hamburger")
-    }), jQuery(".back-icon1").click(function() {
-    document.getElementById("navigation").style.display = "none";
-    
-    }), 
-    
-    jQuery("#hamburger").click(function() {
-    var n = jQuery(this).data("img");
-    jQuery(this).children("img").attr("src", n)
-    });
-    var dropdown = document.querySelectorAll(".dropdown"),
-    dropdownArray = Array.prototype.slice.call(dropdown, 0);
-      // Your jQuery code here
-    });
-  }
-
-
 function changecolortop() { 
           var usercolortop = document.getElementById('colortop').value;
           localStorage.setItem('storedvaluetop', document.querySelector('#saucyui').style.backgroundColor = usercolortop);
@@ -854,6 +419,10 @@ function global() {
     }
 
 
+function sidemenu2 () {
+      document.getElementById("navigation").style.display = "inline";
+    }
+
 
 function sidemenu() {
   document.getElementById("navigation").style.display = "inline";
@@ -891,6 +460,10 @@ function saucypictureinpicture() {
 </script>
 
   
+<div class="hamburger hamburger--squeeze" type="button" id="hamburger" on:click={sidemenu2}><span class="hamburger-box" on:click={sidemenu2}>
+  <span class="hamburger-inner" alt="settings" on:click={sidemenu2}></span></span></div>
+  <div id="main"><div class="row"><div class="col s6"><div class="logo">
+  </div></div><div class="col s6"></div></div></div>
 
   
 <!-- Top Menus -->
@@ -1317,394 +890,389 @@ var saucytimesaucy2=document.getElementById("saucytimesaucy2"),scale=1;localStor
 {/if}
 
 
- 
+
 
   <nav id="navigation">
 
  
     <div id="stars"></div>
 
-
-
-
-    <script>
-
-      function closesaucysidemenu() {
-        document.querySelector("#navigation").style.display = "none";
-      }
-           $("#hamburger").click(function() {
-              $("#iframe1").length || $("#stars").html('<embed id="iframe1" style="opacity: 0;" onload="this.style.opacity = 1;" src="https://p61q9.csb.app/" width="100%" frameborder="0" frameborder="none"></embed>')
-          });
-      
-        $(function() {
-          $("#hide").click(function() {
-              $("section").css("top", "0px")
-          })
-      }), $(function() {
-          $("#show").click(function() {
-              $("section").css("top", "50px")
-          })
-      }),
-      function() {
-          var s, t, n, e, a, i;
-      
-          function o(n) {
-              for (var e = (this.el = n).className.replace(/^\s+|\s+$/g, "").split(/\s+/), t = 0; t < e.length; t++) s.call(this, e[t])
-          }
-          void 0 === window.Element || "classList" in document.documentElement || (i = Array.prototype, s = i.push, t = i.splice, n = i.join, o.prototype = {
-              add: function(n) {
-                  this.contains(n) || (s.call(this, n), this.el.className = this.toString())
-              },
-              contains: function(n) {
-                  return -1 != this.el.className.indexOf(n)
-              },
-              item: function(n) {
-                  return this[n] || null
-              },
-              remove: function(n) {
-                  if (this.contains(n)) {
-                      for (var e = 0; e < this.length && this[e] != n; e++);
-                      t.call(this, e, 1), this.el.className = this.toString()
-                  }
-              },
-              toString: function() {
-                  return n.call(this, " ")
-              },
-              toggle: function(n) {
-                  return this.contains(n) ? this.remove(n) : this.add(n), this.contains(n)
-              }
-          }, window.DOMTokenList = o, e = Element.prototype, a = "classList", i = function() {
-              return new o(this)
-          }, Object.defineProperty ? Object.defineProperty(e, a, {
-              get: i
-          }) : e.__defineGetter__(a, i))
-      }();
-      var ddfullscreenmenu = function() {
-      var e, t, s, a, i = 100;
-      
-      function o(n, e, t) {
-          n.classList.remove("hidemenu"), n.classList.remove("showmenu"), e.classList.remove("hidemenu"), e.classList.remove("showmenu"), "forward" == t && e.classList.add("hidemenu"), n.classList.add("showmenu"), n.style.zIndex = i++
-      }
-      return {
-          togglemenu: function(n) {
-              void 0 === n ? e.classList.toggle("openmenu") : e.classList["open" == n ? "add" : "remove"]("openmenu")
-          },
-          init: function() {
-              e = document.getElementById("ddfullscreenmenu"), t = document.getElementById("ulwrapper"), s = document.getElementById("fullscreenmenu-ul"), document.getElementById("closex").addEventListener("click", function(n) {
-                  ddfullscreenmenu.togglemenu("close"), n.preventDefault()
-              }, !1);
-              var n = function(n, e, t) {
-                  for (var e = e || function() {}, t = t || function() {}, s = document.createDocumentFragment(), a = n.getElementsByTagName("ul"), i = a.length - 1; 0 <= i; i--) {
-                      var o = a[i],
-                          l = a[i].parentNode;
-                      s.appendChild(a[i]), e(i, l, o)
-                  }
-                  return s.appendChild(n), t(n), s
-              }(s, function(n, e, t) {
-                  e.className = "header", (e._submenuref = t).className = "submenu2";
-                  var s = document.createElement("li");
-                  s.className = "breadcrumb", s.innerHTML = e.getElementsByTagName("a")[0].firstChild.nodeValue, s._headerref = e, t.insertBefore(s, t.getElementsByTagName("li")[0]), e.addEventListener("click", function(n) {
-                      var e = this.parentNode;
-                      o(this._submenuref, e, "forward"), n.stopPropagation(), n.preventDefault()
-                  }, !1), s.addEventListener("click", function(n) {
-                      o(this._headerref.parentNode, this._headerref._submenuref, "backwards"), n.stopPropagation(), n.preventDefault()
-                  }, !1)
-              }, function(n) {
-                  n.style.zIndex = i++
-              });
-              t.appendChild(n), t.addEventListener("click", function() {
-                  clearTimeout(a), a = setTimeout(function() {
-                      ddfullscreenmenu.togglemenu("close")
-                  }, 100)
-              }, !1)
-          }
-      }
-      }();
-      
-      function changepic(n) {
-      document.getElementById(n).src = "/uploads/branding/saucy.png"
-      }
-      ddfullscreenmenu.init(), $(function() {
-      var n;
-      
-      function e(n, e, t, s) {
-          this.el = n, this.main = e, this.trigger = t, this.options = function(n, e) {
-              for (var t in e) e.hasOwnProperty(t) && (n[t] = e[t]);
-              return n
-          }(this.defaults, s), this._init()
-      }
-      n = "#navigation", $(".hamburger").on("click", function() {
-          $(n).toggleClass("open"), $(n).hasClass("open") ? ($(n).css("transform", "translateX(0)"), $("#main").css("transform", "translateX(-300px)")) : ($(n).css("transform", "translateX(300px)"), $("#main").css("transform", "translateX(0)"), $("#navigation").width(), $(".nav-overlay").removeClass("nav-overlay"), $(".submenu").removeClass("open")), $("#main").toggleClass("nav-open")
-      }), $("#navigation"), $("#main"), $("nav").width(), e.prototype = {
-          defaults: {
-              backClass: ".back",
-              navLevel: ".nav-level"
-          },
-          _init: function() {
-              this.level = 1, this.menuOpen = !1, this.navTranslate = 40, this.navPosition = 0, this.navWidth = $(this.el).width(), this._openMenu(), this._toggleLevels(), this._toggleLevels2(), this._toggleLevels3(), this._toggleLevels4(), this._toggleLevels5(), this._toggleLevels6(), this._toggleLevels7(), this._toggleLevels8(), this._toggleLevels9(), this._toggleLevels10(), this._toggleLevels11(), this._toggleLevels12(), this._toggleLevels13(), this._toggleLevels14(), this._toggleLevels15(), this._toggleLevels16(), this._toggleLevels17(), this._toggleLevels18(), this._toggleLevels19(), this._toggleLevels20(), this._toggleLevels21(), this._toggleLevels22(), this._toggleLevels23(), this._toggleLevels24(), this._toggleLevels25(), this._toggleLevels26(), this._toggleLevels27(), this._toggleLevels28(), this._toggleLevels29(), this._toggleLevels30(), this._toggleBack(), this._setLevels(this.defaults.navLevel)
-          },
-          _toggleLevels: function() {
-              var e = this;
-              $("#saucysidemenu").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels2: function() {
-              var e = this;
-              $("#saucysidemenu2").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels3: function() {
-              var e = this;
-              $("#saucysidemenu3").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels4: function() {
-              var e = this;
-              $("#saucysidemenu4").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels5: function() {
-              var e = this;
-              $("#saucysidemenu5").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels6: function() {
-              var e = this;
-              $("#saucysidemenu6").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels7: function() {
-              var e = this;
-              $("#saucysidemenu7").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels8: function() {
-              var e = this;
-              $("#saucysidemenu8").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels9: function() {
-              var e = this;
-              $("#saucysidemenu9").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels10: function() {
-              var e = this;
-              $("#saucysidemenu10").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels11: function() {
-              var e = this;
-              $("#saucysidemenu11").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels12: function() {
-              var e = this;
-              $("#saucysidemenu12").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels13: function() {
-              var e = this;
-              $("#saucysidemenu13").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels14: function() {
-              var e = this;
-              $("#saucysidemenu14").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels15: function() {
-              var e = this;
-              $("#saucysidemenu15").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels16: function() {
-              var e = this;
-              $("#saucysidemenu16").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels17: function() {
-              var e = this;
-              $("#saucysidemenu17").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels18: function() {
-              var e = this;
-              $("#saucysidemenu18").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels19: function() {
-              var e = this;
-              $("#saucysidemenu19").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels20: function() {
-              var e = this;
-              $("#saucysidemenu20").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels21: function() {
-              var e = this;
-              $("#saucysidemenu21").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels22: function() {
-              var e = this;
-              $("#saucysidemenu22").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels23: function() {
-              var e = this;
-              $("#saucysidemenu23").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels24: function() {
-              var e = this;
-              $("#saucysidemenu24").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels25: function() {
-              var e = this;
-              $("#saucysidemenu25").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels26: function() {
-              var e = this;
-              $("#saucysidemenu26").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels27: function() {
-              var e = this;
-              $("#saucysidemenu27").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels28: function() {
-              var e = this;
-              $("#saucysidemenu28").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels29: function() {
-              var e = this;
-              $("#saucysidemenu29").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleLevels30: function() {
-              var e = this;
-              $("#saucysidemenu30").on("click", function() {
-                  let n = $(this).closest("div.nav-level");
-                  $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
-              })
-          },
-          _toggleBack: function() {
-              let t = this,
-                  n = $(t.defaults.backClass);
-              n.on("click", function() {
-                  let n = $(this).closest(t.defaults.navLevel),
-                      e = $(this).closest(".nav-overlay.nav-covered");
-                  e.toggleClass("nav-overlay nav-covered"), t.navWidth = t.navWidth - t.navTranslate, t.navPosition = t.navPosition - t.navTranslate, t._transform(t.navWidth, t.main), t._transform(t.navPosition, t.el), n.hasClass("open") && n.toggleClass("open")
-              })
-          },
-          _transform: function(n, e) {
-              $(e).css("transform", "translate3d(-" + n + "px,0,0)")
-          },
-          _openMenu: function() {
-              var n = this;
-              $(n.trigger).on("click", function() {
-                  $(n.trigger).toggleClass("is-active"), $(n.trigger).hasClass("is-active") ? (n.menuOpen = !0, n._resetMenu()) : (n.menuOpen = !1, n.level = 0)
-              })
-          },
-          _resetMenu: function() {
-              this.navWidth = $(this.el).width(), this.navPosition = 0, $(".nav-overlay").removeClass("nav-overlay"), $(".submenu").removeClass("open")
-          },
-          _setLevels: function(n) {
-              $(n).each(function(n) {
-                  $(this).attr("data-level", n + 1)
-              })
-          }
-      }, new e("nav", "#main", ".hamburger")
-      }), $(".back-icon1").click(function() {
-      document.getElementById("navigation").style.display = "none"
-      }), 
-      
-      $("#hamburger").click(function() {
-      var n = $(this).data("img");
-      $(this).children("img").attr("src", n)
-      });
-      var dropdown = document.querySelectorAll(".dropdown"),
-      dropdownArray = Array.prototype.slice.call(dropdown, 0);
-      </script>
-
-
-<div class="nav-level">    
-  {#if settingssaucy}
+ 
   
 
+<script>
 
+function closesaucysidemenu() {
+  document.querySelector("#navigation").style.display = "none";
+}
+     $("#hamburger").click(function() {
+        $("#iframe1").length || $("#stars").html('<embed id="iframe1" style="opacity: 0;" onload="this.style.opacity = 1;" src="https://p61q9.csb.app/" width="100%" frameborder="0" frameborder="none"></embed>')
+    });
+
+  $(function() {
+    $("#hide").click(function() {
+        $("section").css("top", "0px")
+    })
+}), $(function() {
+    $("#show").click(function() {
+        $("section").css("top", "50px")
+    })
+}),
+function() {
+    var s, t, n, e, a, i;
+
+    function o(n) {
+        for (var e = (this.el = n).className.replace(/^\s+|\s+$/g, "").split(/\s+/), t = 0; t < e.length; t++) s.call(this, e[t])
+    }
+    void 0 === window.Element || "classList" in document.documentElement || (i = Array.prototype, s = i.push, t = i.splice, n = i.join, o.prototype = {
+        add: function(n) {
+            this.contains(n) || (s.call(this, n), this.el.className = this.toString())
+        },
+        contains: function(n) {
+            return -1 != this.el.className.indexOf(n)
+        },
+        item: function(n) {
+            return this[n] || null
+        },
+        remove: function(n) {
+            if (this.contains(n)) {
+                for (var e = 0; e < this.length && this[e] != n; e++);
+                t.call(this, e, 1), this.el.className = this.toString()
+            }
+        },
+        toString: function() {
+            return n.call(this, " ")
+        },
+        toggle: function(n) {
+            return this.contains(n) ? this.remove(n) : this.add(n), this.contains(n)
+        }
+    }, window.DOMTokenList = o, e = Element.prototype, a = "classList", i = function() {
+        return new o(this)
+    }, Object.defineProperty ? Object.defineProperty(e, a, {
+        get: i
+    }) : e.__defineGetter__(a, i))
+}();
+var ddfullscreenmenu = function() {
+var e, t, s, a, i = 100;
+
+function o(n, e, t) {
+    n.classList.remove("hidemenu"), n.classList.remove("showmenu"), e.classList.remove("hidemenu"), e.classList.remove("showmenu"), "forward" == t && e.classList.add("hidemenu"), n.classList.add("showmenu"), n.style.zIndex = i++
+}
+return {
+    togglemenu: function(n) {
+        void 0 === n ? e.classList.toggle("openmenu") : e.classList["open" == n ? "add" : "remove"]("openmenu")
+    },
+    init: function() {
+        e = document.getElementById("ddfullscreenmenu"), t = document.getElementById("ulwrapper"), s = document.getElementById("fullscreenmenu-ul"), document.getElementById("closex").addEventListener("click", function(n) {
+            ddfullscreenmenu.togglemenu("close"), n.preventDefault()
+        }, !1);
+        var n = function(n, e, t) {
+            for (var e = e || function() {}, t = t || function() {}, s = document.createDocumentFragment(), a = n.getElementsByTagName("ul"), i = a.length - 1; 0 <= i; i--) {
+                var o = a[i],
+                    l = a[i].parentNode;
+                s.appendChild(a[i]), e(i, l, o)
+            }
+            return s.appendChild(n), t(n), s
+        }(s, function(n, e, t) {
+            e.className = "header", (e._submenuref = t).className = "submenu2";
+            var s = document.createElement("li");
+            s.className = "breadcrumb", s.innerHTML = e.getElementsByTagName("a")[0].firstChild.nodeValue, s._headerref = e, t.insertBefore(s, t.getElementsByTagName("li")[0]), e.addEventListener("click", function(n) {
+                var e = this.parentNode;
+                o(this._submenuref, e, "forward"), n.stopPropagation(), n.preventDefault()
+            }, !1), s.addEventListener("click", function(n) {
+                o(this._headerref.parentNode, this._headerref._submenuref, "backwards"), n.stopPropagation(), n.preventDefault()
+            }, !1)
+        }, function(n) {
+            n.style.zIndex = i++
+        });
+        t.appendChild(n), t.addEventListener("click", function() {
+            clearTimeout(a), a = setTimeout(function() {
+                ddfullscreenmenu.togglemenu("close")
+            }, 100)
+        }, !1)
+    }
+}
+}();
+
+function changepic(n) {
+document.getElementById(n).src = "/uploads/branding/saucy.png"
+}
+ddfullscreenmenu.init(), $(function() {
+var n;
+
+function e(n, e, t, s) {
+    this.el = n, this.main = e, this.trigger = t, this.options = function(n, e) {
+        for (var t in e) e.hasOwnProperty(t) && (n[t] = e[t]);
+        return n
+    }(this.defaults, s), this._init()
+}
+n = "#navigation", $(".hamburger").on("click", function() {
+    $(n).toggleClass("open"), $(n).hasClass("open") ? ($(n).css("transform", "translateX(0)"), $("#main").css("transform", "translateX(-300px)")) : ($(n).css("transform", "translateX(300px)"), $("#main").css("transform", "translateX(0)"), $("#navigation").width(), $(".nav-overlay").removeClass("nav-overlay"), $(".submenu").removeClass("open")), $("#main").toggleClass("nav-open")
+}), $("#navigation"), $("#main"), $("nav").width(), e.prototype = {
+    defaults: {
+        backClass: ".back",
+        navLevel: ".nav-level"
+    },
+    _init: function() {
+        this.level = 1, this.menuOpen = !1, this.navTranslate = 40, this.navPosition = 0, this.navWidth = $(this.el).width(), this._openMenu(), this._toggleLevels(), this._toggleLevels2(), this._toggleLevels3(), this._toggleLevels4(), this._toggleLevels5(), this._toggleLevels6(), this._toggleLevels7(), this._toggleLevels8(), this._toggleLevels9(), this._toggleLevels10(), this._toggleLevels11(), this._toggleLevels12(), this._toggleLevels13(), this._toggleLevels14(), this._toggleLevels15(), this._toggleLevels16(), this._toggleLevels17(), this._toggleLevels18(), this._toggleLevels19(), this._toggleLevels20(), this._toggleLevels21(), this._toggleLevels22(), this._toggleLevels23(), this._toggleLevels24(), this._toggleLevels25(), this._toggleLevels26(), this._toggleLevels27(), this._toggleLevels28(), this._toggleLevels29(), this._toggleLevels30(), this._toggleBack(), this._setLevels(this.defaults.navLevel)
+    },
+    _toggleLevels: function() {
+        var e = this;
+        $("#saucysidemenu").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels2: function() {
+        var e = this;
+        $("#saucysidemenu2").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels3: function() {
+        var e = this;
+        $("#saucysidemenu3").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels4: function() {
+        var e = this;
+        $("#saucysidemenu4").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels5: function() {
+        var e = this;
+        $("#saucysidemenu5").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels6: function() {
+        var e = this;
+        $("#saucysidemenu6").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels7: function() {
+        var e = this;
+        $("#saucysidemenu7").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels8: function() {
+        var e = this;
+        $("#saucysidemenu8").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels9: function() {
+        var e = this;
+        $("#saucysidemenu9").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels10: function() {
+        var e = this;
+        $("#saucysidemenu10").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels11: function() {
+        var e = this;
+        $("#saucysidemenu11").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels12: function() {
+        var e = this;
+        $("#saucysidemenu12").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels13: function() {
+        var e = this;
+        $("#saucysidemenu13").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels14: function() {
+        var e = this;
+        $("#saucysidemenu14").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels15: function() {
+        var e = this;
+        $("#saucysidemenu15").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels16: function() {
+        var e = this;
+        $("#saucysidemenu16").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels17: function() {
+        var e = this;
+        $("#saucysidemenu17").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels18: function() {
+        var e = this;
+        $("#saucysidemenu18").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels19: function() {
+        var e = this;
+        $("#saucysidemenu19").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels20: function() {
+        var e = this;
+        $("#saucysidemenu20").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels21: function() {
+        var e = this;
+        $("#saucysidemenu21").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels22: function() {
+        var e = this;
+        $("#saucysidemenu22").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels23: function() {
+        var e = this;
+        $("#saucysidemenu23").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels24: function() {
+        var e = this;
+        $("#saucysidemenu24").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels25: function() {
+        var e = this;
+        $("#saucysidemenu25").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels26: function() {
+        var e = this;
+        $("#saucysidemenu26").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels27: function() {
+        var e = this;
+        $("#saucysidemenu27").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels28: function() {
+        var e = this;
+        $("#saucysidemenu28").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels29: function() {
+        var e = this;
+        $("#saucysidemenu29").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleLevels30: function() {
+        var e = this;
+        $("#saucysidemenu30").on("click", function() {
+            let n = $(this).closest("div.nav-level");
+            $(this).next().hasClass("submenu") && ($(this).next().toggleClass("open"), n.toggleClass("nav-overlay nav-covered"), e.navWidth = e.navWidth + e.navTranslate, e.navPosition = e.navPosition + e.navTranslate, e._transform(e.navWidth, e.main), e._transform(e.navPosition, e.el))
+        })
+    },
+    _toggleBack: function() {
+        let t = this,
+            n = $(t.defaults.backClass);
+        n.on("click", function() {
+            let n = $(this).closest(t.defaults.navLevel),
+                e = $(this).closest(".nav-overlay.nav-covered");
+            e.toggleClass("nav-overlay nav-covered"), t.navWidth = t.navWidth - t.navTranslate, t.navPosition = t.navPosition - t.navTranslate, t._transform(t.navWidth, t.main), t._transform(t.navPosition, t.el), n.hasClass("open") && n.toggleClass("open")
+        })
+    },
+    _transform: function(n, e) {
+        $(e).css("transform", "translate3d(-" + n + "px,0,0)")
+    },
+    _openMenu: function() {
+        var n = this;
+        $(n.trigger).on("click", function() {
+            $(n.trigger).toggleClass("is-active"), $(n.trigger).hasClass("is-active") ? (n.menuOpen = !0, n._resetMenu()) : (n.menuOpen = !1, n.level = 0)
+        })
+    },
+    _resetMenu: function() {
+        this.navWidth = $(this.el).width(), this.navPosition = 0, $(".nav-overlay").removeClass("nav-overlay"), $(".submenu").removeClass("open")
+    },
+    _setLevels: function(n) {
+        $(n).each(function(n) {
+            $(this).attr("data-level", n + 1)
+        })
+    }
+}, new e("nav", "#main", ".hamburger")
+}), $(".back-icon1").click(function() {
+document.getElementById("navigation").style.display = "none"
+}), 
+
+$("#hamburger").click(function() {
+var n = $(this).data("img");
+$(this).children("img").attr("src", n)
+});
+var dropdown = document.querySelectorAll(".dropdown"),
+dropdownArray = Array.prototype.slice.call(dropdown, 0);
+
+</script>
+    
+<div class="nav-level">    
 
   <div class="nav-header">     
 
-
      <img loading="lazy" id="saucytext" src="/uploads/branding/saucymini.png" class="image" alt="saucytext" width="150" height="50" >
      
-
+    
 
 <ul class="side2">
   <li class="side">   
@@ -4966,12 +4534,13 @@ var saucytimesaucy2=document.getElementById("saucytimesaucy2"),scale=1;localStor
 
 
 
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper","flag_size":16,"switcher_horizontal_position":"inline","switcher_open_direction":"bottom","flag_style":"3d","switcher_text_color":"#f7f7f7","switcher_arrow_color":"#f2f2f2","switcher_border_color":"transparent","switcher_background_color":"transparent","switcher_background_shadow_color":"transparent","switcher_background_hover_color":"transparent","dropdown_text_color":"#eaeaea","dropdown_hover_color":"transparent","dropdown_background_color":"transparent"}</script>
 
     <div id="lightningsettings">
 
 <div id="accountsettings" on:click={sidemenuclose}>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <a data-sveltekit-preload-data="hover" data-sveltekit-preload-code="eager" sveltekit:prefetch href="/languages" on:click={saucylanguages}><img loading="lazy" alt="pictureinpicture" id="languages" <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAHM0lEQVR4nO2dDcxWUxzAb18S8jUklV4VycdGhmpNKMSYNMvHjKkZQ2k0bWVIS2g2TeZjvmIjUqj0Rm1aLVtEk2qRJCV7mRcpe/W+3p+d+We3032e5977nHM/znN/27u9e+69z/+c+3/uPef8v47nFRQUFBQUOArQBbgIuA14HJgHfApsArYBjUCz/DXKZ+rYauAd4DG5Vn1Hl7T7kzuAU4AxwKvAZszzDfAKMBo4Oe3+ZhKgFzAR2EDyKJkPA6d5tQzQGRgHfEV2WAfcDRzm1QrACfKL/JXs8gcwE6jzXAXoCrwAtJAfmoHnnJoMAIfI+KB+dXllt8zWOnt5BhgObMcdfgAu83L6VKh3cCtu8lpuBn5gALAF9/kWON/LMsD1wF/UDk3AzV7WANrIVNbVV1Ql1Ou5rZcFgA7A3IpNdp+31b3IgjLmp30nMsS81JRSKCNDSpEx443Sbap5Xlf3KEmFTK75W16ZiUkp4/Kc2aPS4h/gqiScR7tS62L+UPa7PraU0RZYmXYPc8gnQDsbCplgobH14h/pBizBXcabVkZfCyYRNQ5188no5vDYtMeo/15+yaZZGiBnGe6y0JQyBltq4OgAWWNwmyEmFLLcQsP+Bo4OkHWkWFBdZaWJNYcNFpSRuQC3ie9xtDjzuaGMzBtxm0VxlXGipVnPnnLuT+BQCSpweQXfM45Cpllq0JyAqMVe2mdzcJupcVblOy01ZoQma5L60z4bgdvsiORhBM6z1JDfgI6aLBVKulH77KCMRzaaoH8UhTxoqREvaXLO9B07Qzv2Mm4zOYpCVllqxCWanEd9x6Zpxy7FbVaEVcbhlmZXDUB7zevoj9/a4veyqXPlGldpDhWaCgyy1IBZAQF1OgO0c2Zhnw/EsNkdWEyyDAijEJX+ZYPBmhwVy6QzMyE7mp/uPnk9SJYxYRTylKUg5TbatPrHgPN+8jtz5LW2FYsE9D9JngyjkA8tCJ6hyRha5tyh2rkzcFch9WEUstaC4LMrCi7dnv64q5A1YW6A6cj1TXGVsQ+1cMQSAbKSZLNXCeBnw0KnVBRauU1Tos6aqpUZok0mZmUNYQSZdhD1M9D5fnFmTbYxMCtrCiNEefNMsTYgsypMXNcudW7Msc05hajyFFbCKYFREa4dpV2rEkfDsDgJpYgy6pN4ZZlK0mzV87yB9yJc/26AwyzphKALtTaoWiuJD+rrDQlbVWUAQ5O6JiGjZxBbdZ+FFLVJfNq7yJCwsdr3qmIvVYUKAWNJyTyu3ANpLQyDbExx2M9vrALjqg2mA+pitkU9bX9GOP934AhN9jOkZDox9Sus0+bsLQbCTU+K8R1L5XXZXvO/hPZ5y/VRFBo7WDBIIUMMCVM3oo/cxGpCRJeIQutifs9AzVi5PIS/W3867iNF83snw2uRtBmm9a+PhCKV4uqAsKSdqTmopBEqp8EVVgbMlm4qce7cBOMLwrlwpRHTcYs7Avr4tHbO98Ax2jm9KzxN1TApC2FAabELOFXrYztJYUYiJfcLy5HxZllWwoCse+pSYL0aD7R+dpRJw/CAe3C/xbZsj5w2bdtTlxLz9Xy/oBsDXCCDri2mxM24VYHBrjG73K9TZmENmQu2tpjKlgVuL9Hfg6UOVvbSEXwl+lyiRaL6S9YiURZey2UJq0rYUYP757jBqrDBFirdTsqUm2Z5bGX4GjeMfPMlcG2pcUOcZl1LHLsG+NpgWwZVrRBpWN6S+vfKjOqKMopQBsO35PyGUq8SKUOlql3/UmWb3jeiDJ8vIC/2rY8qRZ1IHqNun2oVj2CHMgpcGLNNe4zXPLFo0zFNzzJ9GAh8XOH6z4BzSlyvrM5xuMeoMnyP7hdkn94BE5OLIzrIWiTy/ljtu1RdlqissFYgUzKebBnbTFEv6QU9JFJF7RcSF+WUmipPRu+IQRr7PI92yjP5lDKyhsvBRl2RX2lVGRbDYVxkQiLK8Jmu09gNJy/MTkwZOZx1pVFQuX1add4L9mduKsqokSIx+So1DjwQuclu0ioW5HSL8YdY8dYCTZnYrkK2vHO58lsY1ILzXC8LJBz0nMVX1POZ2fJIbEOmw/Lzwja9XkvqANdRe+yWHYQ6eVlC6ljVwoZffkeXSkM4zssiloPHskSjbCSZWAJpZKQ2YtZN7yb873fpEY6ZI4E41++AJ1TOXQqm/XWyyO3r5QXgXks3o1lCVv/PSQeOB26V3TQ3WoieVDPEF4Fb9GqouQA4y9IicE2YOCn+W4Sq4LU7xQ/zpuSvbJEST43ict0r/28VRa4W+9J0qSk/RHfJ5g6pvLDBwq4z46xscuI6wLOGlaHCaHqk3a9conLtDNt9DsjBKIiAIfOIKoY8Xi0oo8guCECqUFczTjwCHFXcXEPErL24Q+b0B2zWUlAlKpwy5LYRu2V6OTI1f3KtAJwuEeINMtdvkDm+KlDzkOzAky0LaEFBQUFBgVeb/AtgYomz7ZdvCAAAAABJRU5ErkJggg=="></a>
     <a data-sveltekit-preload-data="hover" data-sveltekit-preload-code="eager" sveltekit:prefetch href="/account"><img loading="lazy" alt="account" id="saucyaccount" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7klEQVR4nO3UPUoDURDA8ZDClLFUrPUKehLxEMZjaCOKB9LSjyqLB9BG1EqRiJY/GVwhjfo2TD4I+4eBZXeW/5s3816n07KIoIcDXOO9jngexLdpSTdQ+Z1h5Eyj0uoP6bg8r3Lf21vKfqb4poH4KlM8aiAeZYobMa+K35aix4N5TXWvPqP/ETkraeKxm2s405vrh6gmtjL6WA9cxGX9LrfSlpmCLnZwhAs84bOOR5zjENuRmyFcxwmeG5zjWNQx1iYRruIMHyYn/j1Fv1S6hXt53GGzRHwrn6pEHMOSzUOJeA+vidIX7Bb1uWWp+AK3aDl9rK/F7wAAAABJRU5ErkJggg=="></a>
    </div>
 
@@ -4989,7 +4558,7 @@ var saucytimesaucy2=document.getElementById("saucytimesaucy2"),scale=1;localStor
 
 <div id="saucypictureinpicture" on:click={sidemenuclose}>
   <img loading="lazy" alt="pictureinpicture" id="pip" on:click={saucypictureinpicture} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA2klEQVR4nO3aQQrCMBRF0bcQHbv2iuDGVNQNPAl0IAFJ2sTSfO5ZQe9/zowEAACADdk+2r7Yfns86Zuvtk9LYu8e3yO11ASnZaM41wSP+DP+5VUTHIoIzuzm8gvtfmER3IaFZ1p7qd4aB2Vhrz2sWfg/+Ek3Wn1Yb6Q1kOAfxMKVl+pNnbHwTGsv1RsLN9r9wlsRwRkHoxIHI4IzDkYlDkYEZxyMShyMCM44GJU4GBEc+w/xp0rmByFRTDXBp/lByOhutg/F4K+XPOf0RsLjSd88VccCAABAfXwAbOtL2Niff5AAAAAASUVORK5CYII=">
-</div>
+ </div>
 
 
 
@@ -4999,10 +4568,9 @@ var saucytimesaucy2=document.getElementById("saucytimesaucy2"),scale=1;localStor
 <div id="lightdark">
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <img loading="lazy" alt="lightdark" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAC8ElEQVRoge3Yz4oUVxTH8W4T32Bm8G/EUUGJglshbjKaZJ/FIPgKCiIqZBNC3Ag+gCGuBVGyyT7qdDQjMwSSEfURRJ0xJqsE9ZNF3dayp7rrVlfd6kT8wTA0c+p3zrfPrZpTp9N5r3dYWMSdSddRW4IS55jBHdxKmSQpSIBYCWnupsqTFATT+D2keIBNKfL0kyUBqQ2BZfyKmcj4aJBwTBaxFBHXP04rsbUMmixXMUAPCxFxM7gXvIeCNAIRjAZbunkso/WeKznPwmPS+D1R8K1M1fCaivmGG+tEifGZgb/N4Tvcx5/h5z4u4dOB2LMTg8glmMKpvjF246Zy3cSuXJGnhnU1OURBwsNYjYDoaxWflHi2DrETTypA5GF2DvFs759dLumtMSDgFY4X+LXbiZD0SA2IE01AaGLCxuUxIU4WeI11nPqmdUEeTrATvQL/XmzgW8H4axIQI+pbPw6NAFnIxcSCNAox4IF2jlYyiOATNZiWmXwfAdHYjZ1MODqpTjQu/PS/7URe2IO1JjuBvfgat/EIL3A1LUnn9dD4pC4EtuN68OnrpWxC3pCq+CnZ+8R0+PyRGrMTPscfBcf0XBKAguJOR8aNgvgC/xRA3GgLYuirbgWIHXheAAFfpoS4F1FclRv7xyEQpHqqyXZaTUIcHAEBG1OB/CbbbU3XhQjxF0tAtiQBKSlqnFH8bgnIfBu15wsadxR/WgLSQzfS6wNcaR0iXBuzeVk36gzxOoPV1iHC9THblxc4Oawz6OIr2QTwuHWI4BGz0OvrNo5ha7h2C+axkI+pWkAjUyzOVwCJ0bdVkjf2PoH9siPRhF5iX+sQOc/rDYHEjfkpIILvrGp74yKtCfdOUggl20B8Jns6jaO/MZccInhg9MomwFTtzDMcSQ4hdhv4Jn4W15Q/AF7hB2yLLWSpZifitoHrr/sY3+CGbIxZC78XcQEHqhbyi2zarXVj9wnqeFTVh/kP3W73UEO+P3c6nVZB3uu/pn8B3Pi/2Q0DytwAAAAASUVORK5CYII=" id="darkmode" on:click={() => { darkmode = !darkmode; localStorage.setItem('darkmode', darkmode); }} />
-</div></div></div>
-{/if}
-
+</div></div></div></div>
 </nav>
+
 
 <nav id="ddfullscreenmenu">
   <div id="colorfuldots"></div>
@@ -5010,5 +4578,7 @@ var saucytimesaucy2=document.getElementById("saucytimesaucy2"),scale=1;localStor
   <div id="ulwrapper">
   <!-- Define your UL (nested) menu below -->
   <ul id="fullscreenmenu-ul">
+
+
 
 </ul></div></nav>
